@@ -1,0 +1,1 @@
+puts "There are " + (365*24).to_s + " hours in a year."
