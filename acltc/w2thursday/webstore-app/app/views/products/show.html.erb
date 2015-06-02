@@ -1,0 +1,31 @@
+<div class="container-fluid">
+
+<h1>Specific Product Page</h1>
+
+<br>
+
+  
+
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="name_and_price">
+          <h3><%= @product.product_name %></h3>
+          <h4><%= @product.price %></h4>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="<%= @product.image %>" height="159px" width="372px">
+      </div>
+
+      <div class="col-sm-4">
+        <div id="description">
+          <h4><%= @product.description %></h4>
+        </div>
+      </div>
+      </div>
+
+
+
+</div>

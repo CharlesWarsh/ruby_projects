@@ -1,0 +1,8 @@
+<h1>Contacts on Separate Lines Page</h1>
+
+<% @contacts.each do |contacto| %>
+  <h2><%= contacto.first_name + " " + contacto.last_name%></h2>
+  <h4><%= contacto.email_address %></h4>
+  <h4><%= contacto.phone_number %></h4>
+  <hr>
+<% end %>

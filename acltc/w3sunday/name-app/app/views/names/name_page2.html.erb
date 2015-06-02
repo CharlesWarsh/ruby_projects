@@ -1,0 +1,9 @@
+<h1>Name Page 2</h1>
+<br>
+
+
+<% if @first_name.start_with?("1","2","3","4","5","6","7","8","9","0") || @last_name.start_with?("1","2","3","4","5","6","7","8","9","0") %>
+   <h2>I'm sorry but your name is bullshit</h2>
+<% else %>
+  <h2><%= @first_name + " " + @last_name%></h2>
+<% end %>

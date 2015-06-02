@@ -1,0 +1,13 @@
+<h1>Guessing Game</h1>
+
+<% if @guess.to_i == 36 %>
+  <h2>You have guessed the correct answer!</h2>
+<% elsif @guess.to_i == 0 %>
+  <h2>Are you sure you even guessed? Guess a real number.</h2>
+<% elsif @guess.to_i > 36%>
+  <h2>Guess lower, moron</h2>
+<% elsif @guess.to_i < 36 %>
+  <h2>Guess higher, moron</h2>
+<% else %>
+  <h2>Are you sure you have made a guess?</h2>
+<% end %>
