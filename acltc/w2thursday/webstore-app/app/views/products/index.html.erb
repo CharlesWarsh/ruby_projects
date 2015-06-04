@@ -12,14 +12,15 @@
         <div class="col-sm-4">
           <div id="name_and_price">
             <h3><%= product.product_name %></h3>
-            <h4><%= product.price %></h4>
+            <h4><%= number_to_currency(product.price, precision: 0) %></h4>
             <h5><a href="/products/<%=product.id%>">Details</a></h5>
             <h5> <%= link_to "Details by link_to", "/products/#{product.id}" %> </h5>
+            <h5> <%= link_to "Edit", "/products/#{product.id}/edit" %> </h5>
           </div>
         </div>
 
         <div class="col-sm-4">
-          <img src="<%= product.image %>" height="159px" width="372px">
+          <%= image_tag product.image, width: 372 %>
         </div>
 
         <div class="col-sm-4">
