@@ -22,7 +22,9 @@
       </div>
 
       <div class="col-sm-4">
-        <%= image_tag @product.images, width: 372 %>
+        <% @product.images.each do |image| %>
+          <%= image_tag image.image_url, width: 372 %>
+        <% end %>
       </div>
 
       <div class="col-sm-4">

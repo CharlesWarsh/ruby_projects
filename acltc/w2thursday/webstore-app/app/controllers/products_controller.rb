@@ -61,6 +61,16 @@ class ProductsController < ApplicationController
   end
 
   def search
-
   end
+
+  def add_image
+  end
+
+  def create_image
+    Image.create(product_id: params[:product_id], image_url: params[:image_url])
+    flash[:success] = "Image Added!"
+    product_id = params[:product_id]
+    redirect_to "/products/#{product_id}"
+  end
+
 end
