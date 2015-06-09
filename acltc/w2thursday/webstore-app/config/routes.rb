@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   get "/" => 'products#home'
   get "/products" => 'products#index'
   get "/products/new" => 'products#new'
+  get "/search" => 'products#search'
   get "/products/:id" => 'products#show'
   post "/products" => 'products#create'
   get "/products/:id/edit" => 'products#edit'
   patch "/products/:id" => 'products#update'
   delete "/products/:id" => 'products#destroy'
+  post "/search" => 'products#submit_search'
 
 end
 

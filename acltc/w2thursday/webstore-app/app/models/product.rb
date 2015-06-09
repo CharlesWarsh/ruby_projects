@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+belongs_to :supplier
 
   def sale_message
     price_for_this = price.to_i

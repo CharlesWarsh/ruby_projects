@@ -5,6 +5,18 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    #if params[:sort]
+     # @products = Product.order(:price)
+    #elsif params[:dsort]
+     # @products = Product.order(price: :desc)
+    if params[:sort]
+      @products = Product.order(params[:sort] => params[:sort_order])
+    elsif params[:disc]
+      @products = Product.where("price < ?", 40000)
+    elsif params[:random]
+      @products = []
+      @products << Product.all.shuffle.first
+    end
   end
 
   def show
@@ -40,5 +52,15 @@ class ProductsController < ApplicationController
     @product.destroy
     flash[:warning] = "Product Deleted!"
     redirect_to "/products"
+  end
+
+  def submit_search
+    search_term = params[:search]
+    @products = Product.where("product_name LIKE ?", "%#{search_term}%")
+    render :index
+  end
+
+  def search
+
   end
 end
