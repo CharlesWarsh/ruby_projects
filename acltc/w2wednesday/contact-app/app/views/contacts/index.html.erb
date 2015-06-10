@@ -1,3 +1,21 @@
-<h1>All Contacts Page</h1>
+<h1><a href="/contacts">All Contacts Page</a></h1>
 
-<%= @contact_list %>
+<%= form_tag '/search', method: :post do %>
+  <div>
+    <%= label_tag :search %>
+    <%= text_field_tag :search %>
+  </div>
+  <%= submit_tag "Search" %>
+
+<% end %>
+
+<% @contacts.each do |contact| %>
+  <h2><%=contact.full_contact%></h2>
+  <h4><%= contact.email_address %></h4>
+  <h4><%= contact.jappy %></h4>
+  <h5><%= contact.bio %></h5>
+  <h5><%= link_to "Details", "/contacts/#{contact.id}"%></h5>
+  <hr>
+<% end %>
+<br>
+<h3><%= link_to "Create a New Contact", "/contacts/new" %> </h3>

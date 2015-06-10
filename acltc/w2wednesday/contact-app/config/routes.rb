@@ -2,6 +2,15 @@ Rails.application.routes.draw do
   get "/" => 'contacts#home'
   get "/contacts" => 'contacts#index'
   get "/contacts_separate_lines" => 'contacts#contacts_separate_lines'
+  get "/contacts/new" => 'contacts#new'
+  get "/contacts/:id" => 'contacts#show'
+  post "/contacts" => 'contacts#create'
+  get "/contacts/:id/edit" => 'contacts#edit'
+  patch "/contacts/:id" => 'contacts#update'
+  delete "/contacts/:id" => 'contacts#destroy'
+  post "/search" => 'contacts#search'
+
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
