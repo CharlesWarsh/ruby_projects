@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "/" => 'products#home'
+  devise_for :users
+  get "/" => 'products#index'
+  root to: 'products#index'
   get "/products" => 'products#index'
   get "/products/new" => 'products#new'
   get "/search" => 'products#search'
