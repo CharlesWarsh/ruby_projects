@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to "All Contacts", "/contacts" %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<%= link_to "Create An Account |", "/users/sign_up" if current_user == nil %>
+<%= link_to "Sign In", "/users/sign_in" if current_user == nil %>
+<%= link_to "Sign Out", "/users/sign_out", method: :delete if current_user != nil%>
 
 <%= yield %>
 

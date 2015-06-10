@@ -10,12 +10,14 @@
 <% end %>
 
 <% @contacts.each do |contact| %>
-  <h2><%=contact.full_contact%></h2>
-  <h4><%= contact.email_address %></h4>
-  <h4><%= contact.jappy %></h4>
-  <h5><%= contact.bio %></h5>
-  <h5><%= link_to "Details", "/contacts/#{contact.id}"%></h5>
-  <hr>
+    <% if contact.user_id == current_user.id %>
+      <h2><%=contact.full_contact%></h2>
+      <h4><%= contact.email_address %></h4>
+      <h4><%= contact.jappy %></h4>
+      <h5><%= contact.bio %></h5>
+      <h5><%= link_to "Details", "/contacts/#{contact.id}"%></h5>
+      <hr>
+    <% end %>
 <% end %>
 <br>
 <h3><%= link_to "Create a New Contact", "/contacts/new" %> </h3>

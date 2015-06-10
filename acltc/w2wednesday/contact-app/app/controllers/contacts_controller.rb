@@ -45,7 +45,7 @@ class ContactsController < ApplicationController
     coordinates = Geocoder.coordinates(params[:street_address] + ", " + params[:city] + ", " + params[:state])
     latitude = coordinates[0]
     longitude = coordinates[1]
-    Contact.create(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email_address: params[:email_address], phone_number: params[:phone_number], bio: params[:bio], latitude: latitude, longitude: longitude)
+    Contact.create(first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email_address: params[:email_address], phone_number: params[:phone_number], bio: params[:bio], latitude: latitude, longitude: longitude, user_id: current_user.id)
     redirect_to "/contacts"
   end
 

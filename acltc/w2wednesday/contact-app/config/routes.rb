@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "/" => 'contacts#home'
+  root to: 'contacts#index'
   get "/contacts" => 'contacts#index'
   get "/contacts_separate_lines" => 'contacts#contacts_separate_lines'
   get "/contacts/new" => 'contacts#new'
